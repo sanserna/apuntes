@@ -5,45 +5,82 @@
 	
 2. Interfaz general:
 
-	* si se quiere abrir un proyecto completo, simplemente arrastrar la carpeta del proyecto a sublime y aparecerá la barra lateral con el árbol del proyecto y los archivos que contiene.
-	* cuando se tienen varios archivos abiertos presionar cmd/ctrl + Numero para moverse entre las pestañas que se encuentren abiertas.
-	* de puede hacer scroll del archivo directamente en el minimapa que esta a la derecha. (para ocultarlo view -> hide minimap).
-	* se puede cambiar el layout a múltiples columnas (cmd/ctrl + alt + number) y filas (cmd/ctrl + alt + shift + number). para moverse entre grupos cmd + k, cmd + left/right.
-	* para cambiar la sintaxis en la que se esta escribiendo abrir menú inferior derecho.
+	* si se quiere abrir un proyecto completo, simplemente arrastrar la carpeta 
+	del proyecto a sublime y aparecerá la barra lateral con el árbol del 
+	proyecto y los archivos que contiene.
 
-3. Modificar preferencias: font_face, font_size, line_numbers, gutter, rulers, theme, folder_exclude_patterns, file_exclude_patterns.
+	* cuando se tienen varios archivos abiertos presionar cmd/ctrl + Numero
+	para moverse entre las pestañas que se encuentren abiertas.
+
+	* de puede hacer scroll del archivo directamente en el minimapa que esta a
+	la derecha. (para ocultarlo view -> hide minimap).
+
+	* se puede cambiar el layout a múltiples columnas (cmd/ctrl + alt + number)
+	y filas (cmd/ctrl + alt + shift + number). para moverse entre grupos cmd + k,
+	cmd + left/right.
+
+	* para cambiar la sintaxis en la que se esta escribiendo abrir menú inferior
+	derecho.
+
+3. Modificar preferencias: font_face, font_size, line_numbers, gutter, rulers,
+theme, folder_exclude_patterns, file_exclude_patterns.
 
 4. Color Schemes --> preferencias -> color scheme.
 
-	* se puede hacer de forma manual al ir a la carpeta donde se instalan los paquetes (preferencias -> browse packages) y crear una carpeta llamada daylerees -themes y colocar los temas que quiera descargándolos desde el repo.
+	* se puede hacer de forma manual al ir a la carpeta donde se instalan los
+	paquetes (preferencias -> browse packages) y crear una carpeta llamada 
+	daylerees -themes y colocar los temas que quiera descargándolos desde el repo.
 		https://github.com/daylerees/colour-schemes
+
 	* se puede hacer automatico por medio de package control -> dayleress-themes.
 
 5. Gestión de proyectos:
 
-	* se pueden crear archivos dentro de carpetas especificas desde la barra lateral.
-	* para abrir archivos se puede usar el atajo cmd/ctrl + t/p y se abrirá un cuadro de dialogo desde el cual puedo buscar y abrir archivos.
+	* se pueden crear archivos dentro de carpetas especificas desde la barra 
+	lateral.
+
+	* para abrir archivos se puede usar el atajo cmd/ctrl + t/p y se abrirá un 
+	cuadro de dialogo desde el cual puedo buscar y abrir archivos.
+
 	* se puede guardar el proyecto por medio de proyect -> save proyect.
-	* se puede cambiar la configuración del proyecto especifico por medio del archivo de configuración que se crea al guardar el proyecto.
+
+	* se puede cambiar la configuración del proyecto especifico por medio del
+	archivo de configuración que se crea al guardar el proyecto.
 
 6. Selección múltiple:
 
-	 * para seleccionar varias lineas se puede hacer con la rueda del mouse o presionando alt y arrastrando lo que se quiere seleccionar.
-	 * con cmd/ctrl se puede hacer seleccion multiple en las partes del documento que yo quiera.
-	 * para reemplazar una palabra que se repite en todo el documento primero buscar la palabra cmd/ctrl + f y poner find all.
-	 * si se selecciona una palabra y se presion cmd/ctrl + d se buscara la siguiente porción de texto que sea igual a la seleccionada.
+	 * para seleccionar varias lineas se puede hacer con la rueda del mouse o 
+	 presionando alt y arrastrando lo que se quiere seleccionar.
+
+	 * con cmd/ctrl se puede hacer seleccion multiple en las partes del 
+	 documento que yo quiera.
+
+	 * para reemplazar una palabra que se repite en todo el documento primero 
+	 buscar la palabra cmd/ctrl + f y poner find all.
+
+	 * si se selecciona una palabra y se presion cmd/ctrl + d se buscara la 
+	 siguiente porción de texto que sea igual a la seleccionada.
 
 7. Package control:
 
-	* para instalarlo ir a la pagina https://packagecontrol.io/installation y seguir las instrucciones para la versión de sublime que se tenga.
-	* para acceder a las opciones de package control ejecutar cmd/ctrl + shift + p y buscar package control. 
-	* para instalar un paquete seleccionar install package y seleccionar el paquete que se quiera instalar.
+	* para instalarlo ir a la pagina https://packagecontrol.io/installation y 
+	seguir las instrucciones para la versión de sublime que se tenga.
+
+	* para acceder a las opciones de package control ejecutar cmd/ctrl + shift + p 
+	y buscar package control.
+
+	* para instalar un paquete seleccionar install package y seleccionar el 
+	paquete que se quiera instalar.
+
 		* paquetes útiles:
 		- color sublime -> cambiar los color scheme de forma fácil.
-		- color highlighter -> pre visualizar colores directamente al seleccionar su código hexadecimal, rgb o cualquier otro.
+		- color highlighter -> pre visualizar colores directamente al seleccionar 
+		su código hexadecimal, rgb o cualquier otro.
 		- emmet -> ayuda para que escribir código sea mas ágil.
 		- themr -> cambiar los temas de sublime.
-		- sublimelinter -> corrección de código, este paquete requiere de una configuración extra.
+		- sublimelinter -> corrección de código, este paquete requiere de una 
+		configuración extra.
 		- hayaku -> escribir css mas rápido.
 		- setiui -> agrega iconos personalizados a cada tipo de archivo. 
-		- material design theme -> aplica el google material design al tema de sublime.
+		- material design theme -> aplica el google material design al tema de
+		sublime.

@@ -1,173 +1,305 @@
-Sistema de control de versiones: ayudan a gestionar proyectos tecnologicos, permite tener control y conocimiento sobre los estados del proyecto. Registran y guardan cada modificacion del proyecto en un registro. todo lo que modificas lo vigilan.
+Sistema de control de versiones: ayudan a gestionar proyectos tecnologicos, 
+permite tener control y conocimiento sobre los estados del proyecto. Registran y 
+guardan cada modificacion del proyecto en un registro. todo lo que modificas lo 
+vigilan.
 
-	* commits: conjunto de cambios realizados en un proyecto, se le conoce como repositorio.
+	* commits: conjunto de cambios realizados en un proyecto, se le conoce como 
+	repositorio.
 
 -- Caracteristicas
 	
-	* Sistema de control de versiones distribuido: GIT clona los proyectos para que cada persona ó miembro de un equipo tenga una copia exacta y completa de todo el código, historial y las personas que estuvieron involucradas.
-	-- El registro encapsulado de todos los cambios de estos elementos se le conoce como repositorio. --
+	* Sistema de control de versiones distribuido: GIT clona los proyectos para 
+	que cada persona ó miembro de un equipo tenga una copia exacta y completa de 
+	todo el código, historial y las personas que estuvieron involucradas.
 
-	* El repositorio original se puede clonar las veces que quiera, y trabaja de forma independiente.
+	* El registro encapsulado de todos los cambios de estos elementos se le 
+	conoce como repositorio.
 
--- Arquitectura de arbol: git se maneja en tres areas, working area, staging area y repository.
+	* El repositorio original se puede clonar las veces que quiera, y trabaja de 
+	forma independiente.
+
+-- Arquitectura de arbol: git se maneja en tres areas, working area, staging 
+area y repository.
 	
-	* working area refiere a cuando se esta trabajando de forma local, donde se editan y trabajan los proyectos, se generan cambios pero no se avisa nada a git.
+	* working area refiere a cuando se esta trabajando de forma local, donde se 
+	editan y trabajan los proyectos, se generan cambios pero no se avisa nada a 
+	git.
 
-	* staging area refiere a cuando creemos que algun archivo esta listo para subirlo al repositorio (save and continue). uno mismo define cuales son los archivos que se quieren subir al repositorio.
+	* staging area refiere a cuando creemos que algun archivo esta listo para 
+	subirlo al repositorio (save and continue). uno mismo define cuales son los 
+	archivos que se quieren subir al repositorio.
 
-	* el repositorio es el registro completo de todo el proyecto, se encarga de encapsular los cambios en commints.
+	* el repositorio es el registro completo de todo el proyecto, se encarga de 
+	encapsular los cambios en commints.
 
 ** Configurando git **
 git trabaja siempre desde la consola del equipo (terminal)
 
 	$ git --version (muestra la version instalada)
-	$ git config --global user.name "nombreUsuario" --> establece globalmente el nombre del usuario.
-	$ git config --global user.email "emailUsuario" --> establece globalmente el email del usuario.
-	$ git config --global color.ui true --> interfaz mas bonita
-	$ git config --global --list --> muestra y confirma que todos se haya definido correctamente.
+
+	$ git config --global user.name "nombreUsuario" --> establece globalmente el 
+	nombre del usuario.
+
+	$ git config --global user.email "emailUsuario" --> establece globalmente el 
+	email del usuario.
+
+	$ git config --global color.ui true --> interfaz mas bonita.
+
+	$ git config --global --list --> muestra y confirma que todos se haya 
+	definido correctamente.
 
 __GIT DENTRO DEL PROYECTO__
-** Es necesario al momento de crear un proyecto activar git para que funcione --> para activar git hay que jecutar el comando git init dentro de la carpeta del proyecto
+Es necesario al momento de crear un proyecto activar git para que funcione:
+para activar git hay que jecutar el comando git init dentro de la carpeta del proyecto.
 
-	* git status --> muestra el estado del proyecto (cambios, cambios borrados, que sigue etc...)
+	* git status --> muestra el estado del proyecto (cambios, cambios borrados, 
+	que sigue etc...).
+
 	* git add
-		* git add -A --> guarda y rastrea todos los archivos que se encuentren en el proyecto (staging atrea).
+
+		* git add -A --> guarda y rastrea todos los archivos que se encuentren 
+		en el proyecto (staging atrea).
+
 		* git add . --> ¿?
+
 		* git add [archivo(s)] --> agrega archivos individualmente.
+
 	* git commit -m "mensaje" --> realiza un commit de los archivos establecidos.
+
 	* git log --> muestra los cambios que se han realizado en el proyecto (commits).
-		//* log tiene muchas formas de mostrar los commits y sus ramas *//
-		* git log --oneline --graph --all --> muestra los commits de una forma mas facil de entender.
+
+		log tiene muchas formas de mostrar los commits y sus ramas.
+
+		* git log --oneline --graph --all --> muestra los commits de una forma 
+		mas facil de entender.
+
 		-- LOGS PERSONALIZADOS --
 		uno puede configuara sus propios comandos del log
-			* git config --global alias.nicelog 'log --oneline --graph --all'. para llamar el comando simplemente poner git nicelog.
+			* git config --global alias.nicelog 'log --oneline --graph --all'. 
+			para llamar el comando simplemente poner git nicelog.
 
-	* git log > commits.txt --> crea un archivo commits.txt con la informacion de los commits realizados.
-	* git checkout codigoCommit --> nos lleva a la version del proyecto en el commit establecido.
-	* git checkout master --> nos devuelve a la ultima version en la que se encuentra el proyecto.
-	* git reset --> cuando se ejecuta este comando, se borran las versiones del proyecto que le siguen al commit en el que este ubicado. Existen tres comandos para git reset
-		* git reset --soft --> borra las versiones pero no modifica los archivos del workout area.
+	* git log > commits.txt --> crea un archivo commits.txt con la informacion 
+	de los commits realizados.
+
+	* git checkout codigoCommit --> nos lleva a la version del proyecto en el 
+	commit establecido.
+
+	* git checkout master --> nos devuelve a la ultima version en la que se 
+	encuentra el proyecto.
+
+	* git reset --> cuando se ejecuta este comando, se borran las versiones del 
+	proyecto que le siguen al commit en el que este ubicado. Existen tres 
+	comandos para git reset
+
+		* git reset --soft --> borra las versiones pero no modifica los archivos 
+		del workout area.
+
 		* git reset --mixed --> borra las versiones y tambien las del staging area.
-		* git reset --hard --> borra todo incluyendo el workout area.
-		// si se quiere regresar a un commit que ha sido borrado con git reset --hard se ejecuta el comando mas el codigo del commit al que se quiere regresar.
-	* git commit --amend -m "mensaje que sustituye el ultimo commit" --> actualiza el ultimo commit realizado (solo se puede con el ultimo commit)
-	* git reset HEAD index.html --> quita el archivo index.html del staging area.
-	** git commit -am "mensaje" --> agrega (staging area) y hace commit en un mismo paso.
 
-	** git branch --> muestra la rama en la que se encuentra ubicado el HEAD.
-	** git branch -a --> muestra todas las ramas en el repositorio.
+		* git reset --hard --> borra todo incluyendo el workout area.
+		// si se quiere regresar a un commit que ha sido borrado con git reset --hard 
+		se ejecuta el comando mas el codigo del commit al que se quiere regresar.
+
+	* git commit --amend -m "mensaje que sustituye el ultimo commit" --> actualiza 
+	el ultimo commit realizado (solo se puede con el ultimo commit).
+
+	* git reset HEAD index.html --> quita el archivo index.html del staging area.
+
+	* git commit -am "mensaje" --> agrega (staging area) y hace commit en un mismo paso.
+
+	* git branch --> muestra la rama en la que se encuentra ubicado el HEAD.
+
+	* git branch -a --> muestra todas las ramas en el repositorio.
 
 	--RAMAS--
-	Las ramas o branches son lineas alternas del tiempo, funciona para crear features, arreglar bugs, experimentar, sin afectar la version estable, la linea principal del proyecto.
+	Las ramas o branches son lineas alternas del tiempo, funciona para crear 
+	features, arreglar bugs, experimentar, sin afectar la version estable, la
+	linea principal del proyecto.
 
 	* crear rama:
 		git branch nombreRama
+
 	* crear y rama y situarse en ella
 		git checkout -b "nombreRama"
+
 	* navegar entre ramas
 		git checkout nombreRama
+
 	* borrar ramas
 		git branch -d nombreRama
 
 	--FUSIONES--
-	Las fusiones se usan para cuando se quiere combianar un commit de una rama con la rama master del proyecto, hay dos formas de realizar una fusion:
-		* fast-forward --> los gestores trabajaron archivos diferentes al repositorio.
-			para realizar una fusion por este metodo primero se debe situar el HEAD en la rama master quien sera quien reciba los cambios de la rama experimental y ejecutar el comando:
-			* git merge experimental -> cuando aparezca el mensaje presionar o (letra o) para ingresar el mensaje que describira el commit de la fusion, cuando se termine de ingresar el mensaje presionar la tecla scape para salir de el modo edicion. -> finalmente escribir un :x (dos puntos + x) al final de la entrada y presionar enter para salvar y salir.
-		* manual merge --> cuando dos personas trabajan el mismo archivo en la fusion, de esta forma hay que determinar de forma manual que cambios se quieren hacer de forma manual.
+	Las fusiones se usan para cuando se quiere combianar un commit de una rama 
+	con la rama master del proyecto, hay dos formas de realizar una fusion:
 
-		* git branch --merged --> muestra las ramas que se han fusionado con las rama principal.
+		* fast-forward --> los gestores trabajaron archivos diferentes al repositorio.
+
+			para realizar una fusion por este metodo primero se debe situar el 
+			HEAD en la rama master quien sera quien reciba los cambios de la 
+			rama experimental y ejecutar el comando:
+
+			* git merge experimental -> cuando aparezca el mensaje presionar 
+			o (letra o) para ingresar el mensaje que describira el commit de la 
+			fusion, cuando se termine de ingresar el mensaje presionar la tecla 
+			scape para salir de el modo edicion. -> finalmente escribir un 
+			:x (dos puntos + x) al final de la entrada y presionar enter para 
+			salvar y salir.
+
+		* manual merge --> cuando dos personas trabajan el mismo archivo en la 
+		fusion, de esta forma hay que determinar de forma manual que cambios se 
+		quieren hacer de forma manual.
+
+		* git branch --merged --> muestra las ramas que se han fusionado con la 
+		rama principal.
 		
-bitbucked(repositorios privados)
+** bitbucked(repositorios privados)
 
 ___GITHUB___
-Es una plataforma social para construir proyectos web, se basa en tres ejes: colaboracion, creacion y conexion.
+Es una plataforma social para construir proyectos web, se basa en tres ejes: 
+colaboracion, creacion y conexion.
 
 	* workflows --> flujos de trabajos colaborativos.
 
 	__CLONAR__
-	boton fork --> clonar proyecto, cuando se clona un proyecto se genera una copia exacta en mi computador.
+	boton fork --> clonar proyecto, cuando se clona un proyecto se genera una 
+	copia exacta en mi computador.
 
-		* git clone [https or SSH] --> clona el proyecto en mi computador en la carpeta donde me encuentre situado por medio del terminal.
+		* git clone [https or SSH] --> clona el proyecto en mi computador en la
+		carpeta donde me encuentre situado por medio del terminal.
 
 	__CONECTAR PROYECTOS PROPIOS__
-	se usa para cuando quiero trabajar en un proyecto pripio y soy solo yo quien colabora en dicho proyecto, asi mismo puedo decidir si alguien mas puede participar o no. Sirve para guardar proyecto en la nube (github). 
+	se usa para cuando quiero trabajar en un proyecto pripio y soy solo yo quien 
+	colabora en dicho proyecto, asi mismo puedo decidir si alguien mas puede 
+	participar o no. Sirve para guardar proyecto en la nube (github).
 
-	--> el primer commit que se realiza en un repositorio es el README quien contiene toda la documentacion del repositorio.
+	--> el primer commit que se realiza en un repositorio es el README quien 
+	contiene toda la documentacion del repositorio.
 
 	1. el primer paso es crear un repositorio en github.
+
 	2. crear el proyecto de forma local e inicializar git por medio de git init.
 
-	* git remote add origin https://enlaceServidor --> enlazar proyectos locales con servidores, puede ser cualquier servidor.
-	add define que se esta añadiendo un repositorio local.
-	origin determina el repositorio de origen a donde se va a enlazar.
+	* git remote add origin https://enlaceServidor --> enlazar proyectos locales 
+	con servidores, puede ser cualquier servidor.
+
+	-> add define que se esta añadiendo un repositorio local.
+
+	-> origin determina el repositorio de origen a donde se va a enlazar.
+
 		* git remote -v --> ver repositorios vinculados.
 
-	* git push origin master --> empujar los commits que se tienen localmente al servidor remoto. el ultimo argumento es la rama a la que se le quiere hacer push, puede ser una diferente al master.
+	* git push origin master --> empujar los commits que se tienen localmente al 
+	servidor remoto. el ultimo argumento es la rama a la que se le quiere hacer 
+	push, puede ser una diferente al master.
 
-	** origin/master es un brach oculto que lo que hace basicamente es un mirror de los repositorios.
+	* origin/master es un brach oculto que lo que hace basicamente es un mirror 
+	de los repositorios.
 
 	__CONECTAR PROYECTOS PROPIOS + MI EQUIPO DE TRABAJO__
-	Es lo mismo que el proceso anterior, pero todos los cambios que hagan nuestros colaboradores van a ser subido al mismo repositorio sin necesidad de autorizacion.
-	- es obligatorio actualizar mi repositorio local con los cambios realizados en el repositorio remoto antes de empezar a codificar.
+	Es lo mismo que el proceso anterior, pero todos los cambios que hagan 
+	nuestros colaboradores van a ser subido al mismo repositorio sin necesidad 
+	de autorizacion.
 
-		* git fetch origin --> descarga los cambios en el repositorio remoto a mi repositorio local pero en el branch origin/master.
+	- es obligatorio actualizar mi repositorio local con los cambios realizados 
+	en el repositorio remoto antes de empezar a codificar.
 
-		// despues hay que realizar un merge o fusion entre la rama origin/master y la rama master de mi repositorio local.
-		* git merge origin/master
+		* git fetch origin --> descarga los cambios en el repositorio remoto a 
+		mi repositorio local pero en el branch origin/master.
 
-		//Finalmente realizar un git push para sincronizar mis modificaciones locales con el repositorio remoto.
-		* git push origin master
+		* despues hay que realizar un merge o fusion entre la rama origin/master 
+		y la rama master de mi repositorio local.
+
+			* git merge origin/master
+
+		* Finalmente realizar un git push para sincronizar mis modificaciones 
+		locales con el repositorio remoto.
+
+			* git push origin master
 
 	__REPOSITORIOS FORKED__
 	- ustedes no son los dueños y quieren participar en el desarrollo.
 	- los dueños del proyecto le dan vision (que commits si y que commits no).
 	- todo es a traves del concepto de Pull Request (PR).
 
-	* para realizar el proceso necesitamos conectar 2 repositorios para que se actualice el contenido.
-		- su repositorio fored (el que se coloco en su cuenta de github y son dueños).
-		- el repositorio principal (al que se le hizo el fork)
+	* para realizar el proceso necesitamos conectar 2 repositorios para que se 
+	actualice el contenido.
+
+		- su repositorio fored (el que se coloco en su cuenta de github y son 
+		dueños).
+
+		- el repositorio principal (al que se le hizo el fork).
 
 	* siempre que vayamos a iniciar cambios, actualizarnos con el proyecto principal.
 
 	* hacer nuestros cambios, experimentos, etc.
 
 	* revisar nuevamente si no hubo cambios con el proyecto principal.
+
 	* subir a nuestro forked repository todo lo que hemos hecho.
+
 	* si queremos, crear un pull request para colaboracion.
 
 	** PASOS_________________________________________________________
-		1. clonar el repositorio forked en mi computador. (cuando se hace un clon tambien se conecta el repositorio / se puede omitir el paso 2).
+		1. clonar el repositorio forked en mi computador. (cuando se hace un 
+		clon tambien se conecta el repositorio / se puede omitir el paso 2).
+
 		2. conectar el repositorio origin (el repositorio forked).
+
 			* git remote add origin https://enlaceServidor
+
 		3. conectar el repositorio original (al que se le hizo el fork).
+
 			* git remote add upstream https://enlaceServidor
-		4. hacer un mirror de las dos ramas ocultas que tiene el proyecto (origin, upstream).
+
+		4. hacer un mirror de las dos ramas ocultas que tiene el proyecto 
+		(origin, upstream).
+
 			* git fetch origin
+
 			* git fetch upstream
-		5. fusionar rama principal (master) con la rama original (upstream) para actualizar cambios.
+
+		5. fusionar rama principal (master) con la rama original (upstream) para 
+		actualizar cambios.
+
 			* git merge upstream/master
+
 		6. realizar un push al repositorio remoto (forked).
+
 			* git push origin master
 
 __DEPLOYMENT__
-Es la manera de llevar tus proyectos al mundo (internet), todas las actividades que hacen a un proyecto de sofware disponible para su uso.
+Es la manera de llevar tus proyectos al mundo (internet), todas las actividades 
+que hacen a un proyecto de sofware disponible para su uso.
 
 	** AMBIENTES
 	normalmente hay cuatro ambientes que se utilizan a nivel profesional en la web.
+
 	- desarrollo --> computadora local.
-	- testing --> funciona para que se generen pruebas y examenes para encontrar errores en el codigo.
-	- staging --> servidor extra donde se verifica si el proyecto esta funcionando correctamente o no.
+
+	- testing --> funciona para que se generen pruebas y examenes para encontrar 
+	errores en el codigo.
+
+	- staging --> servidor extra donde se verifica si el proyecto esta 
+	funcionando correctamente o no.
+
 	- produccion --> servidor, llevarlo a la web.
 
 	** GITHUB PAGES
-	github al ser un servidor, tambien sirve como hosting gratuito, el unico problema es que no se puede hacer uso del back end, pero si todo el front end que se quiera usar.
+	github al ser un servidor, tambien sirve como hosting gratuito, el unico 
+	problema es que no se puede hacer uso del back end, pero si todo el front 
+	end que se quiera usar.
 
-	* para crear un portafolio que tenga una url unica crear un repositorio que se llame sanserna.github.io
+	* para crear un portafolio que tenga una url unica crear un repositorio que 
+	se llame sanserna.github.io
 
-	la forma mas facil para crear un github pages es hacerlo directamente desde github.
+	la forma mas facil para crear un github pages es hacerlo directamente desde 
+	github.
+
 		1. crear un branch con el nombre gh-pages.
-		2. en la parte superior del repositorio aparece un link editable, el link debe tener la siguiente esctructura:
+
+		2. en la parte superior del repositorio aparece un link editable, el 
+		link debe tener la siguiente esctructura:
+
 			http://usuario.github.io/nombreRepositorio
 			
 			|
@@ -177,119 +309,259 @@ Es la manera de llevar tus proyectos al mundo (internet), todas las actividades 
 	** CONECTAR POR SSH
 
 	* confirgurar llave:
-		1. abrir termina y ejecutar el comando ssh-keygen desde el directolio local de la computadora. --> esto genera un ssh key dentro de una carpeta .ssh almacenada en el computador.
-		2. especificar el passphrase que es una contraseña que yo establezco para dicha llave.
-		3. entrar en la carpeta .ssh y confirmar que exista un archivo id_rsa y id_rsa.pub.
-		4. ejecutar el comando cat id_rsa.pub para poder ver el codigo para mi llave, copiar el codigo.
-		5. abrir github e ir a la parte de settings/ssh keys para crear una nueva llave, endonde se especifica el nombre de la llave y el codigo que se genero anteriormente.
+
+		1. abrir termina y ejecutar el comando ssh-keygen desde el directolio 
+		local de la computadora. --> esto genera un ssh key dentro de una 
+		carpeta .ssh almacenada en el computador.
+
+		2. especificar el passphrase que es una contraseña que yo establezco
+		para dicha llave.
+
+		3. entrar en la carpeta .ssh y confirmar que exista un archivo id_rsa y 
+		id_rsa.pub.
+
+		4. ejecutar el comando cat id_rsa.pub para poder ver el codigo para mi 
+		llave, copiar el codigo.
+
+		5. abrir github e ir a la parte de settings/ssh keys para crear una nueva 
+		llave, endonde se especifica el nombre de la llave y el codigo que se 
+		genero anteriormente.
 
 	* conectar por medio del terminal:
+
 		1. ir al directorio del proyecto e inicializar git (git init).
-		2. ejecutar el comando  * git remote add origin ssh-link para establecer la conexion con el repositorio remoto por medio de conexion ssh.
-		3. realizar pull por medio de * git pull origin master --> la contraseña que se pide es la que se establecio al crear la llave.
+
+		2. ejecutar el comando  * git remote add origin ssh-link para establecer 
+		la conexion con el repositorio remoto por medio de conexion ssh.
+
+		3. realizar pull por medio de * git pull origin master --> la contraseña 
+		que se pide es la que se establecio al crear la llave.
+
 		4. hacer los cambios que se tengan que hacer.
+
 		5. hacer un push al commit con los cambios * git push origin gh-pages.
 
 	__MANUAL DEPLOYMENT__
-	cuado se habla de deployment se dice que existen 3 ambientes (pueden ser mas), el ambiente local (local repository) que es donde se hace todo el desarrollo, el repositorio remoto es un ambiente central donde se guarda todo el conjunto de codigo del proyecto(s) y finalmente se hace un despliegue al repositorio de produccion (servidor) que es donde la gente ve el proyecto y lo consume (pagina web), la conexion entre cada uno de ellos se hace por medio de ssh. el orden es: 
+	cuado se habla de deployment se dice que existen 3 ambientes (pueden ser mas),
+	el ambiente local (local repository) que es donde se hace todo el desarrollo, 
+	el repositorio remoto es un ambiente central donde se guarda todo el conjunto 
+	de codigo del proyecto(s) y finalmente se hace un despliegue al repositorio 
+	de produccion (servidor) que es donde la gente ve el proyecto y lo consume 
+	(pagina web), la conexion entre cada uno de ellos se hace por medio de ssh. 
+	el orden es: 
 
 		ambiente local --> repositorio central remoto --> servidor
 
-	la autenticacion ssh se hace para confirmar si soy o no el dueño del repositorio o servidor. Tanto los sistemas operativos como los servidores cuentan con una terminal.
+	la autenticacion ssh se hace para confirmar si soy o no el dueño del 
+	repositorio o servidor. Tanto los sistemas operativos como los servidores 
+	cuentan con una terminal.
 
 	** PASOS_________________________________________________________
+
 		1. configurar proyecto o aplicacion en el servidor.
-		2. acceder al servidor por medio de ssh, depende de cada servidor establecer la foma en la que se puede hacer esto. esto basicamente lo que hace es establecer una conexion con el servidor via terminal.
+
+		2. acceder al servidor por medio de ssh, depende de cada servidor 
+		establecer la foma en la que se puede hacer esto. esto basicamente lo 
+		que hace es establecer una conexion con el servidor via terminal.
+
 			* shh codigoServidor
+
 			ej: ssh miguelnieva@web396.webfaction.com
+
 			normalmente pide una contraseña para acceder a la cuenta del servidor.
+
 		3. generar una llave ssh * ssh-keygen.
-		4. ir a github y generar la llave ssh con el codigo de la llave generada en el servidor.
-		5. dentro de la terminal del servidor inicializar git en la carpeta del proyecto por medio de * git init.
-		6. dentro de la terminal del servidor conectarse remotamente con el servidor de github, para esto copiar el ssh clone URL que se encuentra dentro del repositorio de github y ejecutar el siguiente comando en la terminal del servidor
+
+		4. ir a github y generar la llave ssh con el codigo de la llave generada 
+		en el servidor.
+
+		5. dentro de la terminal del servidor inicializar git en la carpeta del 
+		proyecto por medio de * git init.
+
+		6. dentro de la terminal del servidor conectarse remotamente con el 
+		servidor de github, para esto copiar el ssh clone URL que se encuentra 
+		dentro del repositorio de github y ejecutar el siguiente comando en la 
+		terminal del servidor
+
 			* git remote add origin sshCloneURL
+
 		7. hacer un pull del repositorio de github al del servidor
-			* git pull origin master --> el master define la rama que se esta jalando, puede ser otra rama. de esta manera se traen todos los archivos del repositorio de github al servidor.
+
+			* git pull origin master --> el master define la rama que se esta 
+			jalando, puede ser otra rama. de esta manera se traen todos los 
+			archivos del repositorio de github al servidor.
+
 		8. repetir el proceso para cada cambio que se realice:
+
 			ambiente local --> repositorio central remoto --> servidor
 
 	__GITHUB-DEPLOYMENT
-		- en un repositorio de github el wiki define un archivo donde se le dice a los desarrolladores como colaborar en el proyecto y las instrucciones de como conectarse y toda la informacion necesaria.
-		- issues define: bugs, features, adelantos, ayuda etc. el issue puede ser asignado a alguno de los miembros del equipo.
-			* en los comentarios de los issues se puede colocar imagenes, codigo etc.
-			* al solucionar un issue, es recomendable que en el comentario del issue en el que se establece que ya quedo resuelto el issue se coloque el vinculo del commit en el que esta resuelto el issue.
-		- un milestone asigna tareas con un fecha en la que se debe tener hecha la tarea, un milestone esta compuesto por issues y el porcentaje de finalizacion del milestone depende de los issues que ye hayan resuelto.
+
+		- en un repositorio de github el wiki define un archivo donde se le dice
+		a los desarrolladores como colaborar en el proyecto y las instrucciones 
+		de como conectarse y toda la informacion necesaria.
+
+		- issues define: bugs, features, adelantos, ayuda etc. el issue puede 
+		ser asignado a alguno de los miembros del equipo.
+
+			* en los comentarios de los issues se puede colocar imagenes, 
+			codigo etc.
+
+			* al solucionar un issue, es recomendable que en el comentario del 
+			issue en el que se establece que ya quedo resuelto el issue se 
+			coloque el vinculo del commit en el que esta resuelto el issue.
+
+		- un milestone asigna tareas con un fecha en la que se debe tener hecha 
+		la tarea, un milestone esta compuesto por issues y el porcentaje de 
+		finalizacion del milestone depende de los issues que ye hayan resuelto.
 
 	__SHELL SCRIPTS__
-	serie de comandos encapsulados dentro de un archivo .sh --> sirve para automatizar tareas.
-	para crear un shellscript hay que agregar un archivo nombreSheelscript.sh y definir los comando que quiero que se ejecuten --> el archivo puede tener cualquier nombre y pueden haber varios en un solo proyecto. el temrinal permite definir el interprete del shell, es buena practica definir cual sera el interprete, en el caso mas comun se usa el interprete del shell
+	serie de comandos encapsulados dentro de un archivo .sh --> sirve para 
+	automatizar tareas.
+
+	para crear un shellscript hay que agregar un archivo nombreSheelscript.sh y 
+	definir los comando que quiero que se ejecuten --> el archivo puede tener 
+	cualquier nombre y pueden haber varios en un solo proyecto. el temrinal 
+	permite definir el interprete del shell, es buena practica definir cual sera 
+	el interprete, en el caso mas comun se usa el interprete del shell.
 
 		* #!bin/sh
 
 	para ejecutar el shell se escribe el comando: * sh nombreSheelscript.sh
 
 	__GIT HOOKS__
-	son scripts que se ejecutan antes, durante o despues de realizar un movimiento con git. estos scripts son archivos .sh
+	son scripts que se ejecutan antes, durante o despues de realizar un 
+	movimiento con git. estos scripts son archivos .sh
 
-		* los hooks consta de 17 hooks que git ofrece para que durante un evento se ejecute el script, la documentacion se encuentra en este link:
+		* los hooks consta de 17 hooks que git ofrece para que durante un evento 
+		se ejecute el script, la documentacion se encuentra en este link:
+
 			github.com/git/git/blob/master/Documentation/githooks.txt
 
 		__PASOS PARA CREAR UN HOOK__
 
-		1. ingresar al directorio de hooks que se encuentra dentro de la carpeta .git.
-		2. crear el hook que se quiere por medio de touch nombreHook --> el nombre del hook define que tipo de hook se va a ejecutar, ej: post.commit
+		1. ingresar al directorio de hooks que se encuentra dentro de la 
+		carpeta .git.
+
+		2. crear el hook que se quiere por medio de touch nombreHook --> el 
+		nombre del hook define que tipo de hook se va a ejecutar, ej: post.commit
+
 		3. ingresar el contenido del hook por medio del comando * vim nombreHook
 		ej:
 			#!/bin/sh
 			git push origin master
-		4. dentro de la carpeta hooks autorizar el hook que se quiere ejecutar por medio del comando * chmod +x nombreHook
+
+		4. dentro de la carpeta hooks autorizar el hook que se quiere ejecutar 
+		por medio del comando * chmod +x nombreHook.
 
 	__AUTOMATIC DEPLOYMENT__
 	es basicamente el manual deployment, automatizado.
+
 		1. enlazar servidor con el github de mi repositorio (ssh).
+
 		2. conectar workspace local con el repositorio remoto de github (ssh).
+
 			* git remote add origin codigoSSH
-		3. hacer el pull de los archivos del repositorio remoto * git pull origin master
+
+		3. hacer el pull de los archivos del repositorio remoto * git pull 
+		origin master
+
 		4. crear archivo .gitignore y deploy.sh
-			- crear archivo .gitignore con el comando * touch .gitignore (los archivos que empiezan con . significa que son escondidos), despues ejecutar el comando vim .gitignore para editar el contenido del archivo y finalmente escribir *.sh dentro del archivo para que se ignoren todos los archivos que empiecen con .sh y guardar.
+
+			- crear archivo .gitignore con el comando * touch .gitignore 
+			(los archivos que empiezan con . significa que son escondidos), 
+			despues ejecutar el comando vim .gitignore para editar el contenido 
+			del archivo y finalmente escribir *.sh dentro del archivo para que 
+			se ignoren todos los archivos que empiecen con .sh y guardar.
+
 			- crear archivo deploy.sh *touch deploy.sh
-		5. creamos el git hook y lo llenamos, para esto ir a la carpeta hooks que se encuentra dentro de la carpeta .git y crear el archivo * touch post-commit
+
+		5. creamos el git hook y lo llenamos, para esto ir a la carpeta hooks 
+		que se encuentra dentro de la carpeta .git y crear el archivo * touch 
+		post-commit.
+
 			* ingresar el codigo del archivo post-commit
+
 				#!/bin/sh
 				git push origin master
-				ssh mieguelnieva@web396.webfaction.com 'bash -s' < deploy.sh --> esta linea de codigo lo que hace es crear una terminal temporal (no se ve) del repositorio del servidor 'bash -s' y le dice que ejecute el archivo deploy.sh que se encuentra dentro de mi repositorio local.
-		6. autorizar el git hook para que se pueda ejecutar localmente, para esto entrar a la carpeta de hooks y ejecutar * chmod +x post-commit
-		7. en el archivo deploy.sh escribir los comandos que se ejecutaran en el servidor.
+				ssh mieguelnieva@web396.webfaction.com 'bash -s' < deploy.sh
+
+				--> esta linea de codigo lo que hace es crear una terminal 
+				temporal (no se ve) del repositorio del servidor 'bash -s' y le 
+				dice que ejecute el archivo deploy.sh que se encuentra dentro de 
+				mi repositorio local.
+
+		6. autorizar el git hook para que se pueda ejecutar localmente, para 
+		esto entrar a la carpeta de hooks y ejecutar * chmod +x post-commit.
+
+		7. en el archivo deploy.sh escribir los comandos que se ejecutaran en el 
+		servidor.
+
 			#!/bin/sh
 			cd ~/webapps/portafolio --> establezco la ruta a mi aplicacion web
 			git init
 			git remote add origin codigoSSH --> del repositorio en github
 			git pull origin master
+
 		8. hacer el commit.
 
 	__DEPLOY TOTAL EN SERVER__
-	si por alguna circunstancia extrema, no puedes usar github. para este caso existen los "bare repositories" --> repositorios que sirven para recibir y enviar contenidos, pero no se pueden trabajar en ellos. un "bare repository" unicamente guarda el historial de cambios, con todos sus archivos, pero no puede editarlos como tal.
+	si por alguna circunstancia extrema, no puedes usar github. para este caso 
+	existen los "bare repositories" --> repositorios que sirven para recibir y 
+	enviar contenidos, pero no se pueden trabajar en ellos. un "bare repository" 
+	unicamente guarda el historial de cambios, con todos sus archivos, pero no 
+	puede editarlos como tal.
 
 	** PASOS_________________________________________________________
 
-		1. dentro del servidor que almacena mi aplicacion, crear otra aplicacion diferente (proyecto ó carpeta) que sera el "bare repository". (ej: gitcentral)
+		1. dentro del servidor que almacena mi aplicacion, crear otra aplicacion 
+		diferente (proyecto ó carpeta) que sera el "bare repository". (ej: gitcentral)
+
 		2. generar el bare repository:
+
 			- ir a la carpeta que estableci como bare repository en el servidor.
-			- inicializar git * git init --bare --share --> con esto se establece que ese repositorio es un "bare repository" y el share es para que diferentes usuarios puedan hacer push.
-		3. en la terminal establecer enlace remoto con el bare repository del servidor * ssh miguelnieva@web396.webfaction.com/home/miguelnieva/gitcentral --> la ruta puede variar dependiendo del servidor que se este usando
-		4. enviar los commits al "bare repository" desde el workspace * push origin master --> al ejecutar esta accion, el "bare repository" almacena los commits que se hayan realizado.
-		5. desplegar al deploy repository --> es el repositorio del servidor que va a desplegar mi aplicacon web
-			- dentro de la terminal del servido situarse en la carpeta que contiene mi aplicacion web.
+
+			- inicializar git * git init --bare --share --> con esto se establece 
+			que ese repositorio es un "bare repository" y el share es para que 
+			diferentes usuarios puedan hacer push.
+
+		3. en la terminal establecer enlace remoto con el bare repository del 
+
+			servidor * ssh miguelnieva@web396.webfaction.com/home/miguelnieva/gitcentral 
+
+			--> la ruta puede variar dependiendo del servidor que se este usando
+
+		4. enviar los commits al "bare repository" desde el workspace * push 
+		origin master --> al ejecutar esta accion, el "bare repository" almacena 
+		los commits que se hayan realizado.
+
+		5. desplegar al deploy repository --> es el repositorio del servidor que 
+		va a desplegar mi aplicacon web
+
+			- dentro de la terminal del servido situarse en la carpeta que 
+			contiene mi aplicacion web.
+
 			- git init
-			- git remote add origin ../gitcentral --> como estamos ubicados dentro del mismo reposito se puede establecer una ruta relativa a donde se encuentre el "bare repository" (gitcentral).
+
+			- git remote add origin ../gitcentral --> como estamos ubicados 
+			dentro del mismo reposito se puede establecer una ruta relativa a 
+			donde se encuentre el "bare repository" (gitcentral).
+
 			- git pull origin master
+
 		6. repetir los pasos para cuando se hace algun cambio.
+
 		** todo esto se puede automatizar por medio de git hook
 
 __COMANDOS TERMINAL__
-ls -lf --> ver todos los archivos de un directorio y tambien los que estan escondidos.
+
+ls -lf --> ver todos los archivos de un directorio y tambien los que estan 
+escondidos.
+
 rm --> eliminar archivos
+
 rm -rf .carpeta --> elimina la carpeta y su contenido
+
 touch --> crear archivos
 
 ** para cuando se estan usando bases de datos ignorarlas por medio de .gitignore y usar database migration.

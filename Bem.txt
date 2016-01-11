@@ -1,35 +1,59 @@
 //-- METODOLOGIA BEM --\\
 
-BEM --> modificador de bloques de elementos, sugiere una estructura para nombrar las clases, basado en las propiedades del elemento en cuestión. Cuando se utiliza la metodología BEM, hay que tomar en cuenta que solamente se usaran nombres de clases (no IDs). Esta metodología permite crear una estructura y código mas consistente.
+BEM --> modificador de bloques de elementos, sugiere una estructura para nombrar
+las clases, basado en las propiedades del elemento en cuestión. Cuando se 
+utiliza la metodología BEM, hay que tomar en cuenta que solamente se usaran 
+nombres de clases (no IDs). Esta metodología permite crear una estructura y 
+código mas consistente.
 
-BLOQUE --> es un contenedor o contexto donde el elemento se encuentra presente. Por ejemplo si se tiene un encabezado, pie de pagina, barra lateral o un área de contenido principal; cada uno de estos seria considerado un bloque. El bloque de elementos forma la raíz de la clase y siempre ira primero, una vez se ha definido el bloque se puede empezar a nombrar los elementos que lo componen.
+BLOQUE --> es un contenedor o contexto donde el elemento se encuentra presente. 
+Por ejemplo si se tiene un encabezado, pie de pagina, barra lateral o un área de 
+contenido principal; cada uno de estos seria considerado un bloque. El bloque de 
+elementos forma la raíz de la clase y siempre ira primero, una vez se ha 
+definido el bloque se puede empezar a nombrar los elementos que lo componen.
 
-ELEMENTO --> el elemento es una pieza del bloque. Cada elemento se escribe luego del bloque conectado por dos barras bajas:
+ELEMENTO --> el elemento es una pieza del bloque. Cada elemento se escribe luego 
+del bloque conectado por dos barras bajas:
 	
 	.block__element
 
 Es importante mantener los nombres simples, claros y precisos.
 
-MODIFICADORES --> cuando se nombra una clase se pretende que pueda ser aplicada a diferentes elementos que comparten las mismas características, la intención es ayudar a que ese elemento pueda ser repetido para que no se tenga que escribir nuevas clases en otras áreas de sitio si los elementos de estilo son los mismos. Cuando se necesita modificar el estilo de un elemento en especifico, se puede usar un modificador, para esto se añade un doble guion luego del elemento (o bloque):
+MODIFICADORES --> cuando se nombra una clase se pretende que pueda ser aplicada 
+a diferentes elementos que comparten las mismas características, la intención es 
+ayudar a que ese elemento pueda ser repetido para que no se tenga que escribir 
+nuevas clases en otras áreas de sitio si los elementos de estilo son los mismos. 
+Cuando se necesita modificar el estilo de un elemento en especifico, se puede 
+usar un modificador, para esto se añade un doble guion luego del elemento 
+(o bloque):
 
 	.block--modifier
 	.block__element--modifier
 
-Lo importante es mantener el código lo mas simple posible y no tener que repetir lo mismo o crear clases extra a menos que sea absolutamente necesario.
+Lo importante es mantener el código lo mas simple posible y no tener que repetir 
+lo mismo o crear clases extra a menos que sea absolutamente necesario.
 
 	ej:
 	.header__navigation
 	.header__navigation--secondary
-	Si se esta usando una navegación, lo mas probable es que el diseño y espaciado no cambien, pero puede que la navegación secundaria tenga un color diferente. 
-	Con Sass o stylus se puede @extender el elemento principal, de esta forma el elemento secundario heredara las propiedades del elemento principal.
+	Si se esta usando una navegación, lo mas probable es que el diseño y 
+	espaciado no cambien, pero puede que la navegación secundaria tenga un color 
+	diferente. Con Sass o stylus se puede @extender el elemento principal, de 
+	esta forma el elemento secundario heredara las propiedades del elemento 
+	principal.
 
 Ventajas de usar la metodologia BEM
 	
-	Estructura aninada: Los bloques pueden contener otros bloques sin que se vea afectado el Layout de la página.
+	Estructura aninada: Los bloques pueden contener otros bloques sin que se vea 
+	afectado el Layout de la página.
 
-	Colocación Arbitraria: Los bloques se pueden colocar en cualquier parte de la página, en otras páginas o incluso en otros proyectos. La implementación de bloques como entidades independientes hace que se pueda cambiar su posición en la página y garantiza su buen funcionamiento y apariencia.
+	Colocación Arbitraria: Los bloques se pueden colocar en cualquier parte de 
+	la página, en otras páginas o incluso en otros proyectos. La implementación 
+	de bloques como entidades independientes hace que se pueda cambiar su 
+	posición en la página y garantiza su buen funcionamiento y apariencia.
 
-	Reutilización de componentes: Una interface puede contener múltiples instancias de un mismo bloque.
+	Reutilización de componentes: Una interface puede contener múltiples 
+	instancias de un mismo bloque.
 
 ------PAGINAS DE REFERENCIA-------
 	* https://en.bem.info/ --> metodología BEM
