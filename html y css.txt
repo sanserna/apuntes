@@ -1,0 +1,16 @@
+Elementos que componen el diseño web: en la web existen basicamente tres perfiles
+	* Frontend: interaccin directa con el usuario, html css y javascript.
+	html (hypertext markup language) es basicamente el lenjuage de modelado de informacion, html no es un lenguaje de programacion. css (cascading style sheet) es un lenguaje declarado usando estilos en casacada para aplicarle diseño grafico a el html, sirve tambien para darle estilo a otras cosas, pero principalmente css se usa en el diseño web. javascript es un lenguaje de programcacion y de hecho es el unico lenguaje de programacion en el mundo del frontend, existen algunos frameworks tales como jquery, prototype, angular, backbone y muchos otros que estan basodos o creados en javascript, javascript NO ES JAVA.
+	* Backend: backend es basicamente es el proceso por el cual se accede, procesa y se modifica la informacion de una base de datos que se encuentra del lado del servidor implementando algun tipo de lenguaje de programacion (php, java, ruby on rails, MySql, MongoDB) o algun framework como Django o Node.JS y se envia al frontend para que sea vista por el usuario.
+	* Bases de datos: todo arranca con bases de datos, algunos ejemplos de bases de datos son MySql, Postgres, MongoDB; luego de esto se encuentra el backend quien es el encanrgado de comunicarse con las bases de datos por medio de algun lenguaje de programacion que corra del lado del servidor como por ejemplo PHP, Django, express.js, Python, Node.js. Por ultimo de encuentra el frontend quien es el que se encarga de desplegar los datos para que el usuario los vea, esto se hace por medio de HTML5, javascript y css.
+
+Mockup del proyecto con el que se va a estar trabajando debe ser tan feo como sea posible, si el mockup fuera bonito el diseñedaro lo unique que hace es copiar/pegar y ponerle colores, mientras que si el mockup es feo se exige al maximo al diseñador para que aplique su creatividad al 100%. 
+
+HTML5 conceptos basicos y maquetacion, el codigo html esta compuesto basicamente por 3 etiquetas, <html>, <head> y <body>, aparte de estos tres existe un requerimiento que es mas importante aun y es el <!DOCTYPE html> esto no es una etiqueta en si sino una declaracion del lenguaje que vamos a usar, con esto el navegador puede reconocer que lo que se tiene en el documento es una pagina web html, en este caso HTML5. las etiquetas en html funcionan basicamente como un arbol, en donde se parte de una rama principal que se va desplegando en ramas mas pequeñas.
+
+METODOLOGIA BEM (block, element, modifier): los sitios estan compuestos de bloques que a su vez, se componen de elementos que pueden o no tener un modificador. un bloque es un conjunto de elementos, el modificador es el encargado de definir la forma en la que se comporta el bloque dependiendo de su ubicacion y funcionalidad. La metodologia BEM se usa basicamente para que la estructura de nuestra aplicacion web sea mas facil de mantener a medida que vayan creciendo.
+
+CSS: estas siglas significan cascading style sheets, y es el encargado de definir cual va a ser la apariencia de nuestra estructura html. el concepto de casacada define que en el momento que yo aplico un estilo a un elemento, todos sus hijos van a heredar dicha propiedad de ser posible.
+
+* reset.css
+* www.color-hex.com
