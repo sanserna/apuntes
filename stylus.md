@@ -1,5 +1,37 @@
-//-- STYLUS --\\
+# STYLUS
 
+Stylus es un famoso pre-procesador de código que nos hace la vida mas fácil. Es
+una herramienta indispensable que nos ayuda a optimizar y administrar fácilmente
+nuestro código CSS. Con esta herramienta podemos realizar nuestro trabajo de una
+manera mas rápida y ordenada, ahorrando tiempo y dando mejores resultados.
+
+Su funcionamiento es muy simple, nosotros escribimos nuestro código CSS normal,
+el de toda la vida en un archivo (generalmente CSS), los pre-procesadores lo que
+hacen es optimizar ese código para generar un archivo CSS más liviano que aporta
+de cara a la optimización de carga de un sitio web. Ese es todo el misterio no 
+hay más. La sintaxis te Stylus permite ser usada de varias formas, la primera
+de ellas nos da la posibilidad de no usar llaves de apertura y cierre `{}`, no
+usar dos puntos al declarar una propiedad `:` y no usar punto y coma para
+finalizar la declaración de una propiedad `;`. Sin embargo Stylus permite hacer
+uso de la sintaxis CSS normal, simplemente hay que tener en cuenta que todo en
+Stylus se basa en la indentación.
+
+## Instalación de Stylus
+
+Stylus necesita de node.js corriendo para poder funcionar por lo tanto el primer
+paso será instalar node.js, para ello ingresamos al sitio oficial de [NodeJS](https://nodejs.org/en/) y le
+damos al botón “Install”. Con ello nos descargará el instalador de nodejs.
+
+Después de haber realizado la instalación de node.js podemos acceder al instalador
+de paquetes de node llamado npm (node package manager). Para realizar la
+instalación de Stylus de forma global ejecutamos el siguiente comando en nuestra
+terminal de mac o en el CMD de windows:
+
+```sh
+$ npm install -g stylus
+```
+
+El flag `-g
 - Variables: Hay dos formas de declarar una variable
 	$nombreVariable = valor
 	nombreVariable = valor
