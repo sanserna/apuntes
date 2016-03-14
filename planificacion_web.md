@@ -55,6 +55,8 @@ ofrecer un servicio, vender un producto...?
 Dos de los objetivos mas comunes son o bien para hacer dinero o compartir
 información.
 
+- Cuales son los **factores claves** para el éxito del sitio web?
+
 - Para que **tipo de audiencia** se tiene pensado el sitio web? hay un grupo
 especifico de personas que le ayudarán a alcanzar sus objetivos? Es útil
 imaginar a la persona "ideal" que desea visitar su sitio web. Considere su edad,
@@ -64,6 +66,12 @@ de diseño para el sitio web.
 - Que **tipo de contenido** o **información** estará buscando el publico
 objetivo en la pagina web? están buscando algo en especifico, un producto en 
 particular o buscan hacer pedidos en linea?
+
+- Desde done se espera que **acceda** el usuario al sitio web? por medio de
+smarthphones, tablets o esta pensado como una plataforma solo para escritorio?
+
+- Cuando le gustaría **lanzar** el sitio web, esta trabajando en un marco de
+tiempo estricto o tiene una fecha de lanzamiento obligatoria?
 
 Una revisión de sitios similares, así como el material de marketing existentes
 pueden ayudar a identificar un estilo para el diseño.
